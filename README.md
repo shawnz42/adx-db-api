@@ -46,6 +46,7 @@ python setup.py clean
 
 # How to use it?
 
+- first you may read [this page](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal) to create client_id, client_secret and authority_id for your adx and get knowledge of your cluster url, then you can get data using sqlachemy interface.
 - create engine:
 ```
 from sqlalchemy import create_engine
