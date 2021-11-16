@@ -1,6 +1,6 @@
 
 # What's this?
-- This is a [SQLAlchemy dialect](https://docs.sqlalchemy.org/en/13/dialects/index.html) for [ADX](https://docs.microsoft.com/en-us/azure/data-explorer/) (Azure Data Explore), which wraps azure-kusto-data api to sqlalchemy interface.
+- This is a [SQLAlchemy dialect](https://docs.sqlalchemy.org/en/13/dialects/index.html) for [ADX](https://docs.microsoft.com/en-us/azure/data-explorer/) (Azure Data Explorer), which wraps azure-kusto-data api to sqlalchemy interface.
 
 - Another enhancement is supporting transformation from sql to [kql](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/)(Kusto query language), for example , it can transform 
 
