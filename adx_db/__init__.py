@@ -13,6 +13,7 @@ from adx_db.exceptions import (
     Warning,
 )
 from adx_db.parse import parse
+from adx_db.translator import translate
 
 # apilevel = '2.0'
 # # Threads may share the module and connections
@@ -37,5 +38,9 @@ __all__ = [
     'Warning',
     'parse'
 ]
+
+
+def get_kql(sql: str):
+    return translate(parse(sql))
 
 

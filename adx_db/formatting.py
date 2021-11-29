@@ -254,7 +254,7 @@ class Formatter:
 
     def _nlike(self, pair):
         column, value = pair
-        print(column, value)
+        # print(column, value)
 
         # if isinstance(value, string_types):
         #     value = re.sub(r'^%|%$', '', value)
@@ -267,9 +267,9 @@ class Formatter:
         return '{0} is {1}'.format(self.dispatch(pair[0]), self.dispatch(pair[1]))
 
     def _in(self, json):
-        print('in', json)
+        # print('in', json)
         valid = self.dispatch(json[1])
-        print('valid', valid)
+        # print('valid', valid)
         # `(10, 11, 12)` does not get parsed as literal, so it's formatted as
         # `10, 11, 12`. This fixes it.
         if not valid.startswith('('):
@@ -288,9 +288,9 @@ class Formatter:
 
     def _case(self, checks):
         parts = []
-        print('checks', checks)
+        # print('checks', checks)
         for check in checks:
-            print('check', check)
+            # print('check', check)
             if isinstance(check, dict):
                 if 'when' in check and 'then' in check:
                     parts.extend([self.dispatch(check['when'])])
@@ -368,7 +368,7 @@ class Formatter:
         is_join = False
         if 'from' in json:
             from_ = json['from']
-            print('from_', from_)
+            # print('from_', from_)
 
             # # for superset SQL Lab generate mixture of sql and kql
             if (isinstance(from_, dict)
@@ -394,7 +394,7 @@ class Formatter:
             joiner = ' ' if is_join else ', '
             rest = joiner.join(parts)
 
-            print('from:', rest)
+            # print('from:', rest)
 
             return rest
 
@@ -419,7 +419,7 @@ class Formatter:
             groupby_value_list = [item['value'] for item in groupby_]
 
             # get aggregation columns from select
-            print("json['select']", json['select'])
+            # print("json['select']", json['select'])
             aggregation = [item for item in select_ if (isinstance(item['value'], dict)
                                                                and item['value'] not in groupby_value_list)]
 
@@ -434,7 +434,7 @@ class Formatter:
                 # agg = '{}'.format(self.dispatch(each))
                 res_list.append(each)
 
-            print('self.dispatch(res_list)', self.dispatch(res_list))
+            # print('self.dispatch(res_list)', self.dispatch(res_list))
             if res_list:
                 return '| summarize {} by {}'.format(self.dispatch(res_list).replace('"', ''), self.dispatch(groupby))
             else:

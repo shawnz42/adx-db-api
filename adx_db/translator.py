@@ -59,7 +59,7 @@ def preprocess(query: str):
 
     parsed_query = '\n'.join(parsed_query_list)
 
-    print(parsed_query_list)
+    # print(parsed_query_list)
 
     return parsed_query.strip()
 

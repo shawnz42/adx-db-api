@@ -74,6 +74,14 @@ result = engine.execute("select * from table limit 3")
 for row in result:
     print(row)
 ```
+
+# transform sql to kql
+```shell script
+from adx_db import get_kql
+print(get_kql('select a, count(b) as cnt from t group by a'))
+# t | summarize cnt=count(b) by a
+```
+
 you may view [SQL to Kusto cheat sheet](https://docs.microsoft.com/en-us/azure/data-explorer/kusto/query/sqlcheatsheet) or  the test cases.
 
 # How to integrate with pandas?

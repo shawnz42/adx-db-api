@@ -25,7 +25,7 @@ ParserElement.enablePackrat()
 
 # PYPARSING USES A LOT OF STACK SPACE
 sys.setrecursionlimit(3000)
-print('$$$$$$$$$$$$$$$$$$$$')
+
 IDENT_CHAR = alphanums + "@_$"
 
 KNOWN_OPS = [
